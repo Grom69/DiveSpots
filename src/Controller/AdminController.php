@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/dive')]
+#[Route('/admin/dive')]
 class AdminController extends AbstractController
 {
     #[Route('/', name: 'app_dive_index', methods: ['GET'])]

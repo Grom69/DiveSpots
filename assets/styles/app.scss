@@ -1,17 +1,28 @@
 $primary: #3DFAFF;
+$light: white;
 
 @import "~bootstrap/scss/bootstrap";
 
 :root {
     --dark-blue: #191D32;
     --neo-blue: #3DFAFF;
+    --light-blue: #48BEFF;
+    --grey-blue: #748CAB;
     --red: #A63D40;
+    --brown: #A69658;
+    --dark-orange: #FF8811;
+    --light-orange: #F4D06F;
+    --light-orange2: #FDE74C;
 }
 
 body {
     background-image: url(/assets/images/background3.jpg);
     background-size: cover;
     background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 // Admin
@@ -41,5 +52,21 @@ body {
 // list
 
 .bg-div-list {
-    background-color: var(--red);
+    background-color: var(--dark-blue);
+}
+
+//nav
+
+.nav-color {
+    background-color: var(--light-orange2);
+    border-bottom: 1px solid black;
+}
+
+.nav-admin {
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+#logo {
+    width: 50px;
 }

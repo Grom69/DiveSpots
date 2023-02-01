@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm {%  if is_granted('ROLE_ADMIN') %} nav-admin {% else %} nav-color {% endif %} " aria-label="Third navbar example">
+	<div class="container-fluid">
+		<a href="/"><img id="logo" src="{{ asset('build/images/logo.svg') }}" alt=""></a>
+		<a class="navbar-brand ms-2" href="/">DiveSpots</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExample03">
+			<ul class="navbar-nav m-auto mb-2 mb-sm-0">
+				<li class="nav-item">
+					<a class="nav-link active me-5" aria-current="page" href="#">Favoris</a>
+				</li>
+				{% if is_granted('ROLE_ADMIN') %}
+					<li class="nav-item">
+						<a class="btn btn-outline-dark ms-5 " href="/admin/dive">Admin</a>
+					</li>
+				{% endif %}
+			</ul>
+			<div class="me-4">
+				{% if app.user %}
+					<a href="{{path("app_logout") }} " class=" nav-link">
+						Déconnexion
+					</a>
+				{% else %}
+					<a href="{{path("app_login") }} " class=" nav-link">
+						Connexion
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</nav>

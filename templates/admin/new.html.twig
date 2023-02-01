@@ -12,12 +12,12 @@
 			{{ form_start(form) }}
 			{{ form_widget(form) }}
 			<div class="text-center pb-3">
-				<button class="btn btn-light">{{ button_label|default('Save') }}</button>
+				<button class="btn btn-light">{{ button_label|default('Ajouter') }}</button>
 				{{ form_end(form) }}
 			</div>
 		</div>
 	</div>
 
-	<a href="{{ path('app_dive_index') }}" class="btn btn-light ms-3">Retour à la liste</a>
+	<a href="{{ path('app_dive_index') }}" class="btn btn-light ms-3 col-1">Retour</a>
 
 {% endblock %}
