@@ -3,3 +3,19 @@ body {
 }
 
 @import "~bootstrap/scss/bootstrap";
+
+// Admin
+
+.dive-img-admin {
+    max-width: 100px;
+}
+
+#back-admin {
+    background-image: url(/assets/images/backgroundMoyen.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.div-back-admin {
+    background-color: rgba(179, 137, 137, 0.319);
+}
