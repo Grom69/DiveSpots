@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DiveController extends AbstractController
 {
+    #[Route('/', name: 'app_home')]
     #[Route('/dives', name: 'app_dive')]
     public function index(CountryList $countryList): Response
     {
