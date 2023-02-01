@@ -1,4 +1,4 @@
-<div class="animate__animated animate__fadeIn card card-profile m-3 col-3" id="card-profile">
+{# <div class="animate__animated animate__fadeIn card card-profile m-3 col-3" id="card-profile">
 	<img src="{{ dive.picture }}" id="card-picture" class="card-img-top mt-2" alt="profile picture">
 	<div class="card-body text-center d-flex flex-column justify-content-between px-0 py-2  ">
 		<div>
@@ -9,5 +9,15 @@
 		<div class="d-flex justify-content-center ">
 			<a href="#" class="btn btn-primary rounded-bottom w-100 text-white button-link">Détails</a>
 		</div>
+	</div>
+</div> #}
+
+<div class="card p-0 m-5 border-0 animate__animated animate__fadeIn" style="width: 18rem;">
+	<img src="{{ dive.picture }}" class="card-img-top" alt="...">
+	<div class="card-body text-white">
+		<h5 class="card-title text-center ">{{dive.city}}
+		</h5>
+		<p class="card-text text-center">{{dive.country}}</p>
+		<a href="#" class="btn btn-primary text-center w-100">Détails</a>
 	</div>
 </div>

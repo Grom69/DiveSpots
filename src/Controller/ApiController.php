@@ -9,11 +9,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ApiController extends AbstractController
 {
-    #[Route('/api/dives', name: 'app_api')]
-    public function showAllDivesByCountry(DiveRepository $diveRepository): Response
+    #[Route('/api/dives/{search}', name: 'app_api')]
+    public function showAllDivesByCountry(string $search = 'empty', DiveRepository $diveRepository): Response
     {
-
-        $dives = $diveRepository->findAll();
+        if ($search == 'empty') {
+            $dives = $diveRepository->findAll();
+        } else {
+            $dives = $diveRepository->findBy(['country' => $search]);
+        }
 
         $diveTable = [];
 

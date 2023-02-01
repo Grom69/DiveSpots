@@ -1,8 +1,18 @@
-body {
-    background-color: lightgray;
-}
+$primary: #3DFAFF;
 
 @import "~bootstrap/scss/bootstrap";
+
+:root {
+    --dark-blue: #191D32;
+    --neo-blue: #3DFAFF;
+    --red: #A63D40;
+}
+
+body {
+    background-image: url(/assets/images/background3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 // Admin
 
@@ -21,6 +31,15 @@ body {
 }
 
 // card
-#card-picture {
-    border-radius: 0.5rem !important;
+
+.card-body {
+    background-color: var(--dark-blue);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+// list
+
+.bg-div-list {
+    background-color: var(--red);
 }
