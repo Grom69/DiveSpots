@@ -1,20 +1,25 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
-	{% if error %}
-		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-	{% endif %}
+	<div class="container mt-5 pt-5 pb-5 w-50 m-auto bg-primary rounded text-white">
+		<h1 class="text-center display-5">Connexion</h1>
+		<div class="w-50 m-auto mt-4 text-white">
+			{% if error %}
+				<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
 
-	<form action="{{ path('app_login') }}" method="post">
-		<label for="username">Email:</label>
-		<input type="text" id="username" name="_username" value="{{ last_username }}">
+			<form action="{{ path('app_login') }}" method="post">
+				<label class="form-label text-white" for="username">Mail:</label>
+				<input class="form-control border border-dark" type="text" id="username" name="_username" value="{{ last_username }}">
 
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="_password">
+				<label class="form-label text-white mt-3" for="password">Mot de passe:</label>
+				<input class="form-control border border-dark" type="password" id="password" name="_password">
 
-		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-		<button type="submit">login</button>
-	</form>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<div class="d-flex justify-content-center mt-4">
+					<button class="btn btn-light" type="submit">Se connecter</button>
+				</div>
+			</form>
+		</div>
+	</div>
 {% endblock %}
