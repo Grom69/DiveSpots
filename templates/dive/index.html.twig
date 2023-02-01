@@ -1,45 +1,25 @@
-{% extends 'baseAdmin.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}Dive index
+{% block title %}Les plongées
 {% endblock %}
 
 {% block body %}
-
 	<div class="container">
-		<div class="d-flex  justify-content-between">
-			<h1 class="text-white">Dive index</h1>
-			<a href="{{ path('app_dive_new') }}" class="btn btn-light mt-3">Nouveau</a>
-		</div>
-
-		<table class="table text-white">
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>Pays</th>
-					<th>Ville</th>
-					<th>Photo</th>
-					<th>Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for dive in dives %}
-					<tr>
-						<td>{{ dive.id }}</td>
-						<td>{{ dive.country }}</td>
-						<td>{{ dive.city }}</td>
-						<td><img src="{{ dive.picture }}" alt="dive photo" class="dive-img-admin"></td>
-						<td>
-							<a href="{{ path('app_dive_show', {'id': dive.id}) }}" class="btn btn-light">Voir</a>
-							<a href="{{ path('app_dive_edit', {'id': dive.id}) }}" class="btn btn-light">Editer</a>
-						</td>
-					</tr>
-				{% else %}
-					<tr>
-						<td colspan="6">no records found</td>
-					</tr>
+		<div class="text-center mt-4 bg-div-list w-25 m-auto rounded text-white border-0">
+			<label for="country">Filtre par pays</label>
+			<select class="col-3 text-center w-100 card-body text-white ps-4" name="country" id="country">
+				<option value="empty" selected>Tous</option>
+				{% for country in countries %}
+					<option value="{{ country }} ">{{ country }}</option>
 				{% endfor %}
-			</tbody>
-		</table>
-	</div>
 
+			</select>
+		</div>
+		<div id="allDives" class="row d-flex justify-content-center"></div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('divesShow') }}
 {% endblock %}
