@@ -16,7 +16,10 @@
 					<iframe src="https://maps.google.com/maps?&q={{dive.country}}+{{dive.city}}&output=embed" height="220" class="w-100" style="border:0;"></iframe>
 				</div>
 				<p class="card-text p-4">{{dive.description}}</p>
-				<a href="#" class="btn {%  if is_granted('ROLE_ADMIN') %} btn-info {% else %} btn-light {% endif %}  text-center w-100">Détails</a>
+				<a href="{{path('app_bookmarks_add', {'dive': dive.id})}}" class="btn {%  if is_granted('ROLE_ADMIN') %} btn-info {% else %} btn-light {% endif %}  text-center w-100">Ajouter en favoris</a>
+				<a id="bookmarks" href="{{ path('app_bookmarks_add', {'dive': dive.id})}}">
+					<i class="bi {{ app.user.isInBookmarks(dive) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+				</a>
 			</div>
 		</div>
 	</div>

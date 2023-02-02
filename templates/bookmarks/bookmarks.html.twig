@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Favoris
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+
+		<h1 class="text-center display-5 mt-3">Mes favoris</h1>
+		<div class="row">
+			{% for bookmark in bookmarks %}
+				<div class="card p-0 m-5 border-0 animate__animated animate__fadeIn" style="width: 18rem;">
+					<img src="{{ bookmark.picture }}" class="card-img-top" alt="dive">
+					<div class="card-body text-white">
+						<h5 class="card-title text-center ">{{bookmark.city}}
+						</h5>
+						<p class="card-text text-center">{{bookmark.country}}</p>
+						<a href="{{path('app_dive_details', {'dive': bookmark.id})}}" class="btn {%  if is_granted('ROLE_ADMIN') %} btn-info {% else %} btn-light {% endif %}  text-center w-100">Détails</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('divesShow') }}
+{% endblock %}
