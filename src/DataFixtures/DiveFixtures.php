@@ -5,7 +5,6 @@ namespace App\DataFixtures;
 use App\Entity\Dive;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use phpDocumentor\Reflection\DocBlock\Description;
 
 class DiveFixtures extends Fixture
 {
