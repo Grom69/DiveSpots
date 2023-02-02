@@ -17,8 +17,10 @@
 					</li>
 				{% endif %}
 			</ul>
-			<div class="me-sm-4">
+			<div class="me-sm-4 d-lg-flex">
 				{% if app.user %}
+					<span class="me-xl-3 text-secondary">Bienvenue
+						{{app.user.firstName}}</span>
 					<a href="{{path("app_logout") }} " class=" nav-link">
 						Déconnexion
 					</a>

@@ -9,15 +9,16 @@
 			{% endif %}
 
 			<form action="{{ path('app_login') }}" method="post">
-				<label class="form-label text-white" for="username">Mail:</label>
+				<label class="form-label text-white" for="username">Email</label>
 				<input class="form-control border border-dark" type="text" id="username" name="_username" value="{{ last_username }}">
 
-				<label class="form-label text-white mt-3" for="password">Mot de passe:</label>
+				<label class="form-label text-white mt-3" for="password">Mot de passe</label>
 				<input class="form-control border border-dark" type="password" id="password" name="_password">
 
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-				<div class="d-flex justify-content-center mt-4">
-					<button class="btn btn-info" type="submit">Se connecter</button>
+				<div class="d-flex flex-column justify-content-center mt-4">
+					<button class="btn btn-info col-4  m-auto" type="submit">Se connecter</button>
+					<a class="text-white text-center mt-3 text-decoration-none" href="{{ path('app_register') }}">Ou créer un compte</a>
 				</div>
 			</form>
 		</div>
