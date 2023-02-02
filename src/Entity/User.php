@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -32,6 +34,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     private ?string $lastName = null;
+
+    #[ORM\ManyToMany(targetEntity: Dive::class, inversedBy: 'users')]
+    private Collection $bookmarks;
+
+    public function __construct()
+    {
+        $this->bookmarks = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -123,6 +133,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLastName(string $lastName): self
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Dive>
+     */
+    public function getBookmarks(): Collection
+    {
+        return $this->bookmarks;
+    }
+
+    public function addBookmark(Dive $bookmark): self
+    {
+        if (!$this->bookmarks->contains($bookmark)) {
+            $this->bookmarks->add($bookmark);
+        }
+
+        return $this;
+    }
+
+    public function removeBookmark(Dive $bookmark): self
+    {
+        $this->bookmarks->removeElement($bookmark);
 
         return $this;
     }
