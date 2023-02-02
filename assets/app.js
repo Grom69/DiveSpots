@@ -16,8 +16,6 @@ import './bootstrap';
 
 document.getElementById('bookmarks').addEventListener('click', addToBookmarks);
 
-const bookmarkButton = document.getElementById('bookmarks')
-
 function addToBookmarks(e) {
     e.preventDefault();
 
@@ -32,15 +30,17 @@ function addToBookmarks(e) {
             .then(data => {
                 const bookmarkIcon = bookmarkLink.firstElementChild;
                 if (data.isInBookmarks) {
-                    bookmarkIcon.classList.remove("bi-heart"); // Remove the .bi-heart (empty heart) from classes in <i> element
-                    bookmarkIcon.classList.add("bi-heart-fill"); // Add the .bi-heart-fill (full heart) from classes in <i> element
+                    bookmarkIcon.classList.remove("bi-heart");
+                    bookmarkIcon.classList.add("bi-heart-fill");
 
                 } else {
-                    bookmarkIcon.classList.remove("bi-heart-fill"); // Remove the .bi-heart-fill (full heart) from classes in <i> element
-                    bookmarkIcon.classList.add("bi-heart"); // Add the .bi-heart (empty heart) from classes in <i> element
+                    bookmarkIcon.classList.remove("bi-heart-fill");
+                    bookmarkIcon.classList.add("bi-heart");
                 }
             });
     } catch (err) {
         console.error(err);
     }
+
+    return false
 }
