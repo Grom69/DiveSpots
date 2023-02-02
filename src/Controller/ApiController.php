@@ -16,7 +16,9 @@ class ApiController extends AbstractController
         if ($search == 'empty') {
             $dives = $diveRepository->findAll();
         } else {
-            $dives = $diveRepository->findBy(['country' => $search]);
+            $dives = $diveRepository->findBy([
+                'country' => $search
+            ]);
         }
 
         $diveTable = [];
