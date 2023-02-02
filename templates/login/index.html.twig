@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div class="container mt-5 pt-5 pb-5 w-50 m-auto div-back-login rounded text-white">
+	<div class="container mt-sm-5 pt-5 pb-5 col-md-10 col-lg-6 m-auto div-back-login rounded text-white">
 		<h1 class="text-center display-5">Connexion</h1>
 		<div class="w-50 m-auto mt-4 text-white">
 			{% if error %}
@@ -17,7 +17,7 @@
 
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 				<div class="d-flex flex-column justify-content-center mt-4">
-					<button class="btn btn-info col-4  m-auto" type="submit">Se connecter</button>
+					<button class="btn btn-info  col-md-6 col-lg-5 col-xl-5  m-auto" type="submit">Se connecter</button>
 					<a class="text-white text-center mt-3 text-decoration-none" href="{{ path('app_register') }}">Ou créer un compte</a>
 				</div>
 			</form>
