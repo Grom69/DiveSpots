@@ -63,7 +63,7 @@ class DiveFixtures extends Fixture
         'https://images.unsplash.com/photo-1544551763-92ab472cad5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
         'https://images.unsplash.com/photo-1603370671351-ce85bc0ec91e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
         'https://images.unsplash.com/photo-1484507175567-a114f764f78b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
-        'https://images.unsplash.com/photo-1545604698-568084db231c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
+        'https://images.unsplash.com/photo-1519327567471-ae47752b8089?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80',
         'https://images.unsplash.com/photo-1642703745618-4ae3da19ffc2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
         'https://images.unsplash.com/photo-1606862417230-03908d3118ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80',
         'https://images.unsplash.com/photo-1602475508643-735a79b7cbb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
@@ -93,18 +93,24 @@ class DiveFixtures extends Fixture
             }
         }
 
+        $dive2 = new Dive();
+        $dive2->setCountry('Philippines');
+        $dive2->setCity('Cebu');
+        $dive2->setPicture('https://images.unsplash.com/photo-1573553921880-8c2670d35935?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+        $dive2->setDescription("Pour vos vacances plongée, je vous propose du dépaysement, des plongées multicolores, du gros, de la macro et des plages de carte postale. Bienvenue aux Philippines !
+            Ce circuit plongée, accessible dès le niveau 1 ou l'open water, permet d'explorer deux des plus célèbres sites de plongée de l'archipel des Visayas : Malapascua et Moalboal.
+            Au nord de Cebu, la petite île de Malapascua regorge de macro, sur de ravissants plateaux coralliens colorés. Les autonomes partent quant à eux en quête des majestueux requins renard, en s'enfonçant au-delà de 30 mètres. En seconde partie de votre séjour aux Philippines, Moalboal révèle ses merveilles, terrestres et sous-marines. Sur le fameux site de Pescador, on admire les gigantesques bancs de sardines en plongée de nuit.
+            De retour à l’hôtel, on guette le requin baleine. À terre, on profite de délicieux massages et de visites culturelles. Un irrésistible voyage plongée aux Philippines !");
+        $manager->persist($dive2);
 
-        // for ($i = 0; $i < 6; $i++) {
-        //     $dive2 = new Dive();
-        //     $dive2->setCountry('Philippines');
-        //     $dive2->setCity('Cebu');
-        //     $dive2->setPicture('https://www.scubapro.com/sites/scubapro_site/files/scuba-diving-hawaii-united-states-20220207.jpg');
-        //     $dive2->setDescription("Pour vos vacances plongée, je vous propose du dépaysement, des plongées multicolores, du gros, de la macro et des plages de carte postale. Bienvenue aux Philippines !
-        //     Ce circuit plongée, accessible dès le niveau 1 ou l'open water, permet d'explorer deux des plus célèbres sites de plongée de l'archipel des Visayas : Malapascua et Moalboal.
-        //     Au nord de Cebu, la petite île de Malapascua regorge de macro, sur de ravissants plateaux coralliens colorés. Les autonomes partent quant à eux en quête des majestueux requins renard, en s'enfonçant au-delà de 30 mètres. En seconde partie de votre séjour aux Philippines, Moalboal révèle ses merveilles, terrestres et sous-marines. Sur le fameux site de Pescador, on admire les gigantesques bancs de sardines en plongée de nuit.
-        //     De retour à l’hôtel, on guette le requin baleine. À terre, on profite de délicieux massages et de visites culturelles. Un irrésistible voyage plongée aux Philippines !");
-        //     $manager->persist($dive2);
-        // }
+        $dive3 = new Dive();
+        $dive3->setCountry('Costa Rica');
+        $dive3->setCity('Coco Island');
+        $dive3->setPicture('https://www.scubapro.com/sites/scubapro_site/files/scuba-diving-hawaii-united-states-20220207.jpg');
+        $dive3->setDescription("A 550 km de la côte du Costa Rica, et presque 36 heures de navigation, Coco Island n’est accessible qu’en croisière plongée.
+        Sous l’eau, Coco est un véritable sanctuaire animalier ! Ici, chaque rencontre extraordinaire est ordinaire. Peu de sites au monde peuvent offrir une telle concentration d’espèces pélagiques : bancs énormes de requins-marteaux, de requins pointes blanches, de thons et autres poissons, tortues marines, raies manta, marlins, et souvent des requins-baleines.
+        Bajo Alcyone est la plus belle plongée de Coco, et l’une des plus belles au monde ! Vous descendrez rapidement à 25 m, dans une crevasse qui vous servira de site d’observation. Le spectacle commencera par quelques dizaines de requins-marteaux, puis petit à petit ils rempliront totalement votre champ de vison. Les photographes s’en donneront à cœur joie. Ouvrez l’œil pour essayer d’apercevoir les raies-aigles, mantas, mobulas… elles sont là, mais il sera difficile de les apercevoir. Les requins soyeux et requins des Galapagos seront aussi de la fête. Une plongée sensation que vous n’êtes pas près d’oublier !");
+        $manager->persist($dive3);
 
         $manager->flush();
     }
