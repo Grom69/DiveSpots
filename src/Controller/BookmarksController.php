@@ -8,6 +8,7 @@ use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class BookmarksController extends AbstractController
 {
@@ -39,6 +40,7 @@ class BookmarksController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_USER')]
     #[Route('/dives/bookmarks', name: 'app_bookmarks_show')]
     function showBookmarks(UserRepository $userRepository)
     {
