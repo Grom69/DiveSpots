@@ -160,4 +160,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function isInBookmarks(Dive $dive): bool
+    {
+        if (!$this->bookmarks->contains($dive)) {
+            return false;
+        }
+        return true;
+    }
 }

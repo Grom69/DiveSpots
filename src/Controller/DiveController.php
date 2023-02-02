@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Dive;
+use App\Entity\User;
 use App\Repository\DiveRepository;
+use App\Repository\UserRepository;
 use App\Service\CountryList;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,4 +30,5 @@ class DiveController extends AbstractController
 
         return $this->render('dive/show.html.twig', ['dive' => $dive]);
     }
+
 }

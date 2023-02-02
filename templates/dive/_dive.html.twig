@@ -3,6 +3,9 @@
 	<div class="card-body text-white">
 		<h5 class="card-title text-center ">{{dive.city}}
 		</h5>
+
+		<i class="bi {{ app.user.isInBookmarks(dive) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+
 		<p class="card-text text-center">{{dive.country}}</p>
 		<a href="{{path('app_dive_details', {'dive': dive.id})}}" class="btn {%  if is_granted('ROLE_ADMIN') %} btn-info {% else %} btn-light {% endif %}  text-center w-100">Détails</a>
 	</div>
