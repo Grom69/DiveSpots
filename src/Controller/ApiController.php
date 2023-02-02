@@ -14,7 +14,7 @@ class ApiController extends AbstractController
     public function showAllDivesByCountry(string $search = 'empty', DiveRepository $diveRepository): Response
     {
         if ($search == 'empty') {
-            $dives = $diveRepository->findAll();
+            $dives = $diveRepository->findBy([], ['country' => 'ASC']);
         } else {
             $dives = $diveRepository->findBy([
                 'country' => $search

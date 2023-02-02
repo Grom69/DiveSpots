@@ -4,16 +4,13 @@
 		<div>
 			<h5 class="card-title text-center ">{{dive.city}}
 			</h5>
-			{% if is_granted('ROLE_USER') %}
-				<i class="bi text-white {{ app.user.isInBookmarks(dive) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
-			{% endif %}
 			<p class="card-text text-center">{{dive.country}}</p>
 		</div>
 		<div class="mt-3">
 			<a href="{{path('app_dive_details', {'dive': dive.id})}}" class="btn btn-info text-center w-100">Détails</a>
-			<a id="bookmarks" href="#" class="btn btn-info text-center col-4 col-xl-3 align-self-center w-100 mt-2">Supprimer
+			<a id="bookmarks" href="{{ path('app_bookmarks_add', {'dive': dive.id})}}" class="btn btn-info bookmarks text-center col-4 col-xl-3 align-self-center w-100 mt-2">Supprimer
+				<i class="bi ms-1 {{ app.user.isInBookmarks(dive) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
 			</a>
 		</div>
 	</div>
 </div>
-	

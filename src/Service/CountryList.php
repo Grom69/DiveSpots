@@ -16,7 +16,7 @@ class CountryList extends AbstractController
 
     public function countrylist(): array
     {
-        $dives = $this->diveRepository->findAll();
+        $dives = $this->diveRepository->findBy([], ['country' => 'ASC']);
 
         $countryTable = [];
 
