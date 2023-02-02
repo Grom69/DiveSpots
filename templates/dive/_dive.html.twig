@@ -1,9 +1,9 @@
 <div class="card p-0 m-5 border-0 animate__animated animate__fadeIn" style="width: 18rem;">
-	<img src="{{ dive.picture }}" class="card-img-top" alt="...">
+	<img src="{{ dive.picture }}" class="card-img-top" alt="dive">
 	<div class="card-body text-white">
 		<h5 class="card-title text-center ">{{dive.city}}
 		</h5>
 		<p class="card-text text-center">{{dive.country}}</p>
-		<a href="#" class="btn {%  if is_granted('ROLE_ADMIN') %} btn-info {% else %} btn-light {% endif %}  text-center w-100">Détails</a>
+		<a href="{{ path('app_dive_details', {'dive': dive.id}) }}" class="btn {%  if is_granted('ROLE_ADMIN') %} btn-info {% else %} btn-light {% endif %}  text-center w-100">Détails</a>
 	</div>
 </div>

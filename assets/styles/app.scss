@@ -39,7 +39,7 @@ body {
 }
 
 .div-back-admin {
-    background-color: rgba(179, 137, 137, 0.319);
+    background-color: rgba(174, 167, 167, 0.319);
 }
 
 // card
@@ -70,4 +70,17 @@ body {
 
 #logo {
     width: 50px;
+}
+
+// details page
+
+#details-photo {
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+// login
+
+.div-back-login {
+    background-color: rgba(25, 29, 50, 0.9);
 }
