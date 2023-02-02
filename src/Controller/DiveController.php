@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Dive;
+use App\Repository\DiveRepository;
 use App\Service\CountryList;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,5 +19,13 @@ class DiveController extends AbstractController
         $countries = $countryList->countrylist();
 
         return $this->render('dive/index.html.twig', ['countries' => $countries]);
+    }
+
+    #[Route('/dives/show/{dive}', name: 'app_dive_details')]
+    public function showDetails(Dive $dive, DiveRepository $diveRepository): Response
+    {
+        $dive = $diveRepository->findOneBy(['id' => $dive]);
+
+        return $this->render('dive/show.html.twig', ['dive' => $dive]);
     }
 }
