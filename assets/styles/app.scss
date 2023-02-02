@@ -1,5 +1,5 @@
 $primary: #191D32;
-$info: #3DFAFF;
+$info: white;
 $light: white;
 $secondary: #FF8811;
 
@@ -84,4 +84,11 @@ body {
 
 .div-back-login {
     background-color: rgba(25, 29, 50, 0.9);
+}
+
+// home
+
+#catchphrase {
+    background-color: rgba(2, 2, 2, 0.8);
+    height: 300px;
 }
