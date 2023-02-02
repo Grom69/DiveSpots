@@ -6,10 +6,10 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="navbarsExample03">
+		<div class="collapse navbar-collapse text-center" id="navbarsExample03">
 			<ul class="navbar-nav m-auto mb-2 mb-sm-0">
 				<li class="nav-item">
-					<a class="nav-link active me-5" aria-current="page" href="{{path('app_bookmarks_show')}}">Favoris</a>
+					<a class="nav-link active me-sm-5" aria-current="page" href="{{path('app_bookmarks_show')}}">Favoris</a>
 				</li>
 				{% if is_granted('ROLE_ADMIN') %}
 					<li class="nav-item">
@@ -17,7 +17,7 @@
 					</li>
 				{% endif %}
 			</ul>
-			<div class="me-4">
+			<div class="me-sm-4">
 				{% if app.user %}
 					<a href="{{path("app_logout") }} " class=" nav-link">
 						Déconnexion
