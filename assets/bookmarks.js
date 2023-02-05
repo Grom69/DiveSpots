@@ -17,7 +17,11 @@ function Api() {
                 for (const dive of data) {
                     const htmlCard = dive.html.content
                     targetDiv.innerHTML += htmlCard
-                    document.getElementById('bookmarks').addEventListener('click', addToBookmarks);
+                }
+                const bookmarkButtons = document.getElementsByClassName('bookmarks')
+
+                for (const bookmarkButton of bookmarkButtons) {
+                    bookmarkButton.addEventListener('click', addToBookmarks);
                 }
             }
         })
@@ -26,8 +30,6 @@ function Api() {
 document.getElementById('country').addEventListener('input', function (e) {
     Api()
 });
-
-// document.getElementById('bookmarks').addEventListener('click', addToBookmarks);
 
 function addToBookmarks(e) {
     e.preventDefault();

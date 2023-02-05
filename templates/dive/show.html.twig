@@ -13,7 +13,7 @@
 					<p class="card-text text-center text-white pb-3">{{dive.country}}</p>
 					<p class="card-text p-4 text-white">{{dive.description}}</p>
 					{% if is_granted('ROLE_USER') %}
-						<a id="bookmarks" href="{{ path('app_bookmarks_add', {'dive': dive.id})}}" class="btn btn-info bookmarks text-center col-4 col-xl-3 align-self-center">Ajouter aux favoris
+						<a id="bookmarks" href="{{ path('app_bookmarks_add', {'dive': dive.id})}}" class="btn btn-info bookmarks text-center col-4 col-xl-3 align-self-center">{{ app.user.isInBookmarks(dive) ? 'Supprimer le favori' : 'Ajouter aux favoris' }}
 							<i class="bi {{ app.user.isInBookmarks(dive) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
 						</a>
 					{% else %}
