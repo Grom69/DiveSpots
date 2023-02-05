@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les plongées
+{% endblock %}
+
+{% block body %}
+	<div id="catchphrase" class="d-flex justify-content-center align-items-center">
+		<p class="text-white display-6 text-center">DiveSpots référencie les meilleurs sites de plongée à travers le monde.<br>
+			<span class="">Crée ton compte et ajoute tes sites préférés en favoris.</span>
+		</p>
+	</div>
+	<div class="container">
+		<div class="text-center mt-4 bg-div-list col-5 col-lg-3 m-auto rounded text-white border-0">
+			<label for="country">Filtre par pays</label>
+			<select class="col-3 text-center w-100 card-body text-white" name="country" id="country">
+				<option value="empty" selected>Tous</option>
+				{% for country in countries %}
+					<option value="{{ country }} ">{{ country }}</option>
+				{% endfor %}
+
+			</select>
+		</div>
+		<div id="allDives" class="row d-flex justify-content-center"></div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('divesShow') }}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Dive index
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="d-flex  justify-content-between">
+			<h1 class="text-white">Dive index</h1>
+			<a href="{{ path('app_dive_new') }}" class="btn btn-light mt-3">Nouveau</a>
+		</div>
+
+		<table class="table text-white">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Pays</th>
+					<th>Ville</th>
+					<th>Photo</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for dive in dives %}
+					<tr>
+						<td>{{ dive.id }}</td>
+						<td>{{ dive.country }}</td>
+						<td>{{ dive.city }}</td>
+						<td><img src="{{ dive.picture }}" alt="dive photo" class="dive-img-admin"></td>
+						<td>
+							<a href="{{ path('app_dive_show', {'id': dive.id}) }}" class="btn btn-light">Voir</a>
+							<a href="{{ path('app_dive_edit', {'id': dive.id}) }}" class="btn btn-light">Editer</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="6">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Edit Dive
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5 rounded div-back-admin text-white w-50 m-auto">
+		<h1>Editer la plongée</h1>
+
+		<div>
+			{{ form_start(form) }}
+			{{ form_widget(form) }}
+
+			<div class="d-flex justify-content-evenly p-3">
+				<button class="btn btn-light w-25">{{ button_label|default('Editer') }}</button>
+				{{ form_end(form) }}
+
+				<form method="post" class="w-25" action="{{ path('app_dive_delete', {'id': dive.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+					<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ dive.id) }}">
+					<button class="btn btn-light w-100">Supprimer</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<a href="{{ path('app_dive_index') }}" class="btn btn-light ms-3 col-1">Retour</a>
+{% endblock %}

@@ -1,5 +1,94 @@
-body {
-    background-color: lightgray;
-}
+$primary: #191D32;
+$info: white;
+$light: white;
+$secondary: #FF8811;
 
 @import "~bootstrap/scss/bootstrap";
+
+:root {
+    --dark-blue: #191D32;
+    --neo-blue: #3DFAFF;
+    --light-blue: #48BEFF;
+    --grey-blue: #748CAB;
+    --red: #A63D40;
+    --brown: #A69658;
+    --dark-orange: #FF8811;
+    --light-orange: #F4D06F;
+    --light-orange2: #FDE74C;
+}
+
+body {
+    background-image: url(/assets/images/background3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+// Admin
+
+.dive-img-admin {
+    max-width: 100px;
+}
+
+#back-admin {
+    background-image: url(/assets/images/backgroundMoyen.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.div-back-admin {
+    background-color: rgba(174, 167, 167, 0.319);
+}
+
+// card
+
+.card-body {
+    background-color: var(--dark-blue);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+// list
+
+.bg-div-list {
+    background-color: var(--dark-blue);
+}
+
+//nav
+
+.nav-color {
+    background-color: var(--light-orange2);
+    border-bottom: 1px solid black;
+}
+
+.nav-admin {
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+#logo {
+    width: 50px;
+}
+
+// details page
+
+#details-photo {
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+// login
+
+.div-back-login {
+    background-color: rgba(25, 29, 50, 0.9);
+}
+
+// home
+
+#catchphrase {
+    background-color: rgba(2, 2, 2, 0.8);
+    height: 300px;
+}

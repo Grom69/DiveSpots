@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Favoris
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div id="allBookmarks" class="row d-flex justify-content-center"></div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('bookmarks') }}
+{% endblock %}

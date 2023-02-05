@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+	<div class="bg-primary">
+		<div class="container mt-3 rounded p-0 mb-5">
+			<div class="d-xl-flex">
+				<img src="{{ dive.picture }}" class="rounded col-11 col-xl-6 m-4" alt="dive">
+				<div class="bg-primary col-xl-6 d-flex flex-column mb-4">
+					<h2 class="card-title text-center pt-3 mb-2 text-white">{{dive.city}}
+					</h2>
+					<p class="card-text text-center text-white pb-3">{{dive.country}}</p>
+					<p class="card-text p-4 text-white">{{dive.description}}</p>
+					{% if is_granted('ROLE_USER') %}
+						<a id="bookmarks" href="{{ path('app_bookmarks_add', {'dive': dive.id})}}" class="btn btn-info bookmarks text-center col-4 col-xl-3 align-self-center">{{ app.user.isInBookmarks(dive) ? 'Supprimer le favori' : 'Ajouter aux favoris' }}
+							<i class="bi {{ app.user.isInBookmarks(dive) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+						</a>
+					{% else %}
+						<a href="{{ path('app_login')}}" class="btn btn-info text-center col-4 col-xl-3 align-self-center">Ajouter aux favoris
+							<i class="bi bi-heart"></i>
+						</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="w-100">
+			<iframe src="https://maps.google.com/maps?&q={{dive.country}}+{{dive.city}}&output=embed" height="300" class="w-100" style="border:0;"></iframe>
+		</div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
