@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Dive;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -23,7 +24,7 @@ class DiveType extends AbstractType
             ->add('picture', UrlType::class, [
                 'label' => 'Photo'
             ])
-            ->add('description', TextType::class, [
+            ->add('description', TextareaType::class, [
                 'label' => 'Description'
             ]);
     }
